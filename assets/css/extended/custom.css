@@ -1,0 +1,196 @@
+.cv-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.cv-download {
+    display: inline-block;
+    padding: 7px 16px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 14px;
+    color: var(--primary);
+}
+
+.cv-download:hover {
+    border-color: var(--secondary);
+    background: var(--entry);
+}
+
+.cv-section {
+    margin-top: 44px;
+}
+
+.cv-section h2 {
+    margin-bottom: 18px;
+    padding-bottom: 6px;
+    font-size: 22px;
+    border-bottom: 1px solid var(--border);
+}
+
+.cv-entry {
+    padding: 12px 0;
+}
+
+.cv-entry-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.cv-title {
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.cv-meta {
+    color: var(--secondary);
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.cv-sub {
+    color: var(--secondary);
+    font-size: 15px;
+    margin-top: 2px;
+}
+
+.cv-detail {
+    margin: 8px 0 0;
+    font-size: 15px;
+    color: var(--secondary);
+}
+
+.role-list {
+    list-style: none;
+    margin: 8px 0 0;
+    padding: 0;
+}
+
+.role-list li {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 2px 0;
+}
+
+.role-list li span:first-child {
+    font-weight: 600;
+}
+
+.skills {
+    margin: 0;
+}
+
+.skill-row {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 12px;
+    padding: 7px 0;
+}
+
+.skill-row dt {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.skill-row dd {
+    margin: 0;
+    color: var(--secondary);
+}
+
+.cv-inline {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px 18px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--entry);
+    color: inherit;
+}
+
+.project-card:hover {
+    border-color: var(--secondary);
+}
+
+.project-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.project-name {
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--primary);
+}
+
+.project-langs {
+    font-size: 13px;
+    color: var(--secondary);
+    white-space: nowrap;
+}
+
+.project-summary {
+    margin: 0;
+    font-size: 15px;
+    color: var(--secondary);
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: auto;
+}
+
+.tag {
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: var(--code-bg);
+    color: var(--secondary);
+}
+
+@media (max-width: 640px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-row {
+        grid-template-columns: 1fr;
+        gap: 2px;
+    }
+
+    .cv-entry-head,
+    .role-list li {
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .cv-meta {
+        white-space: normal;
+    }
+}

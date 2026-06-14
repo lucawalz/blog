@@ -1,0 +1,73 @@
+{{- define "main" }}
+<article class="post-single cv">
+  <header class="post-header cv-header">
+    <h1 class="post-title">{{ .Title }}</h1>
+    {{- with .Site.Params.cvFile }}
+    <a class="cv-download" href="{{ . }}" target="_blank" rel="noopener noreferrer">Download full CV (PDF)</a>
+    {{- end }}
+  </header>
+
+  <div class="post-content">
+    {{ .Content }}
+
+    {{- with .Site.Data.cv.experience }}
+    <section class="cv-section">
+      <h2>Experience</h2>
+      {{- range . }}
+      <div class="cv-entry">
+        <div class="cv-entry-head">
+          <span class="cv-title">{{ .company }}</span>
+          <span class="cv-meta">{{ .location }}{{ with .duration }} · {{ . }}{{ end }}</span>
+        </div>
+        <ul class="role-list">
+          {{- range .roles }}
+          <li><span>{{ .title }}</span><span class="cv-meta">{{ .type }} · {{ .period }}</span></li>
+          {{- end }}
+        </ul>
+        {{- with .summary }}<p class="cv-detail">{{ . }}</p>{{ end }}
+      </div>
+      {{- end }}
+    </section>
+    {{- end }}
+
+    {{- with .Site.Data.cv.education }}
+    <section class="cv-section">
+      <h2>Education</h2>
+      {{- range . }}
+      <div class="cv-entry">
+        <div class="cv-entry-head">
+          <span class="cv-title">{{ .degree }}</span>
+          <span class="cv-meta">{{ .period }}</span>
+        </div>
+        <div class="cv-sub">{{ .institution }}</div>
+        {{- with .detail }}<p class="cv-detail">{{ . }}</p>{{ end }}
+      </div>
+      {{- end }}
+    </section>
+    {{- end }}
+
+    {{- with .Site.Data.cv.skills }}
+    <section class="cv-section">
+      <h2>Tech</h2>
+      <dl class="skills">
+        {{- range . }}
+        <div class="skill-row">
+          <dt>{{ .group }}</dt>
+          <dd>{{ .items }}</dd>
+        </div>
+        {{- end }}
+      </dl>
+    </section>
+    {{- end }}
+
+    {{- with .Site.Data.cv.languages }}
+    <section class="cv-section">
+      <h2>Languages</h2>
+      <ul class="cv-inline">
+        {{- range . }}<li>{{ .name }} <span class="cv-meta">{{ .level }}</span></li>{{ end }}
+      </ul>
+    </section>
+    {{- end }}
+  </div>
+</article>
+{{- end }}

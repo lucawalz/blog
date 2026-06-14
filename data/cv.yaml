@@ -1,0 +1,58 @@
+experience:
+  - company: IBM
+    location: Böblingen, Hybrid
+    duration: 10 mos
+    roles:
+      - title: Working Student
+        type: Part-time
+        period: Sep 2025 - Dec 2025
+      - title: Software Development Intern
+        type: Full-time
+        period: Mar 2025 - Aug 2025
+    summary: >-
+      Built API test suites and backend testing workflows for IBM Knowledge
+      Catalog, validating enterprise-scale microservices alongside the dev and QA teams.
+    tags:
+      - Java
+      - Jenkins
+      - Microservices
+      - API testing
+
+education:
+  - institution: Hochschule der Medien, Stuttgart
+    degree: BSc Media Informatics
+    period: 2023 - Present
+    detail: Bachelor thesis on autonomous cluster remediation with LLM agents.
+  - institution: Freie Waldorfschule, Böblingen
+    degree: Abitur
+    period: 2020 - 2022
+  - institution: Burnaby Mountain Secondary School, Vancouver
+    degree: Exchange year, Canada
+    period: 2019 - 2020
+
+volunteering:
+  - role: Student Mentor
+    org: Hochschule der Medien, Stuttgart
+    period: Mar 2024 - Aug 2024
+    detail: Supporting first-semester students in finding their footing on campus and in their studies.
+  - role: Downhill Trainer
+    period: Since 2014
+  - role: Scout
+    period: Since 2008
+    detail: Long-term member, organising outdoor excursions with larger groups.
+
+skills:
+  - group: Languages
+    items: Go, Python, Java, TypeScript
+  - group: Runtimes and frameworks
+    items: Spring, React, Nix
+  - group: Infrastructure and data
+    items: Linux, Kubernetes, Docker, Terraform, Postgres, Redis, Prometheus, Grafana, Raspberry Pi
+
+languages:
+  - name: German
+    level: Native
+  - name: English
+    level: C2
+  - name: Russian
+    level: A1
