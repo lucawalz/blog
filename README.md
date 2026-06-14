@@ -8,7 +8,7 @@ A static blog and project notes, served from the home-lab cluster.
 
 ## Description
 
-The source for blog.syslabs.dev, a Hugo static site using the PaperMod theme.
+The source for lucawalz.dev, a Hugo static site using the PaperMod theme.
 GitHub Actions builds it into a container image and pushes it to GHCR. The
 home-lab cluster serves that image behind Traefik, and Cloudflare exposes it
 publicly.
