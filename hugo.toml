@@ -1,6 +1,6 @@
 baseURL = "https://lucawalz.dev/"
 languageCode = "en-us"
-title = "Luca Walz"
+title = "lucawalz.dev"
 theme = "PaperMod"
 enableRobotsTXT = true
 enableEmoji = true
@@ -20,16 +20,31 @@ defaultTheme = "auto"
 ShowReadingTime = true
 ShowCodeCopyButtons = true
 ShowShareButtons = false
+cvFile = "/cv/luca-walz-cv.pdf"
 
 [params.homeInfoParams]
-Title = "Luca Walz"
-Content = "Notes on the things I build, project by project: past work, current experiments, and whatever comes next."
+Title = "Hi, I'm Luca"
+Content = "I'm a backend and cloud engineer. I like working across the whole stack, from the APIs down to the servers and networks they run on, and lately that has mostly meant Kubernetes, NixOS, and a lot of Go. I'm studying at HdM Stuttgart, and I spent the last year at IBM working on backend services and the testing around them. A lot of what I build outside of that lives in a homelab I run entirely from Git, and I write up the parts worth sharing here."
+
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/lucawalz"
+
+[[params.socialIcons]]
+name = "linkedin"
+url = "https://www.linkedin.com/in/luca-walz"
 
 [[menu.main]]
-identifier = "posts"
-name = "Posts"
-url = "/posts/"
+identifier = "projects"
+name = "Projects"
+url = "/projects/"
 weight = 10
+
+[[menu.main]]
+identifier = "about"
+name = "About"
+url = "/about/"
+weight = 15
 
 [[menu.main]]
 identifier = "tags"
