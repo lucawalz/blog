@@ -1,0 +1,38 @@
+baseURL = "https://blog.syslabs.dev/"
+languageCode = "en-us"
+title = "syslabs"
+theme = "PaperMod"
+enableRobotsTXT = true
+enableEmoji = true
+
+[pagination]
+pagerSize = 10
+
+[markup.highlight]
+codeFences = true
+guessSyntax = true
+lineNos = false
+noClasses = false
+style = "monokai"
+
+[params]
+defaultTheme = "auto"
+ShowReadingTime = true
+ShowCodeCopyButtons = true
+ShowShareButtons = false
+
+[params.homeInfoParams]
+Title = "syslabs"
+Content = "Notes on the things I build, project by project: past work, current experiments, and whatever comes next."
+
+[[menu.main]]
+identifier = "posts"
+name = "Posts"
+url = "/posts/"
+weight = 10
+
+[[menu.main]]
+identifier = "tags"
+name = "Tags"
+url = "/tags/"
+weight = 20
