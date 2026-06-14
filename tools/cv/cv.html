@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  :root {
+    --accent: #1f5f8b;
+    --ink: #1a1a1a;
+    --muted: #555;
+    --rule: #d8dde3;
+  }
+
+  @page {
+    size: A4;
+    margin: 13mm 15mm 12mm 15mm;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { font-size: 10pt; }
+
+  body {
+    margin: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    line-height: 1.4;
+  }
+
+  header {
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+  }
+
+  h1 {
+    font-size: 22pt;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 0.3px;
+  }
+
+  .headline {
+    font-size: 11pt;
+    color: var(--accent);
+    font-weight: 600;
+    margin-top: 2px;
+  }
+
+  .contact {
+    font-size: 8.6pt;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+
+  .contact a { color: var(--muted); text-decoration: none; }
+
+  .profile {
+    font-size: 9.4pt;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+
+  section { margin-bottom: 13px; }
+
+  h2 {
+    font-size: 9.5pt;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--accent);
+    font-weight: 700;
+    margin: 0 0 7px 0;
+    padding-bottom: 3px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .entry { margin-bottom: 9px; }
+  .entry:last-child { margin-bottom: 0; }
+
+  .entry-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .entry-title { font-weight: 700; font-size: 9.8pt; }
+  .entry-org { color: var(--muted); font-weight: 600; }
+  .entry-meta {
+    color: var(--muted);
+    font-size: 8.6pt;
+    white-space: nowrap;
+    padding-left: 10px;
+  }
+
+  .roles {
+    list-style: none;
+    margin: 3px 0 4px 0;
+    padding: 0;
+    font-size: 8.8pt;
+    color: var(--muted);
+  }
+
+  .roles li { display: flex; justify-content: space-between; }
+
+  .entry-desc { font-size: 9.2pt; margin-top: 3px; }
+
+  .projects { display: grid; gap: 7px; }
+
+  .project-name { font-weight: 700; font-size: 9.6pt; }
+  .project-stack { color: var(--accent); font-weight: 600; font-size: 8.6pt; }
+  .project-desc { font-size: 9pt; color: var(--ink); margin-top: 1px; }
+
+  .skills-row {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 4px 10px;
+    font-size: 9pt;
+    margin-bottom: 4px;
+  }
+  .skills-label { color: var(--muted); font-weight: 600; }
+
+  .langs { font-size: 9pt; }
+  .langs span { color: var(--muted); }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Luca Walz</h1>
+    <div class="headline">Backend and Cloud Engineer</div>
+    <div class="contact">
+      GitHub github.com/lucawalz &nbsp;&middot;&nbsp;
+      LinkedIn linkedin.com/in/luca-walz &nbsp;&middot;&nbsp;
+      lucawalz.dev
+    </div>
+  </header>
+
+  <p class="profile">
+    Backend and cloud engineer who likes following a system the whole way down, from the API
+    surface to the infrastructure underneath. Most of my work sits around Kubernetes, NixOS and
+    GitOps, with a fair bit of Go, plus LLM agents and full-stack IoT on the side.
+  </p>
+
+  <section>
+    <h2>Experience</h2>
+    <div class="entry">
+      <div class="entry-head">
+        <span><span class="entry-title">IBM</span> <span class="entry-org">&mdash; Böblingen (Hybrid)</span></span>
+        <span class="entry-meta">10 months</span>
+      </div>
+      <ul class="roles">
+        <li><span>Working Student (Part-time)</span><span>Sep 2025 - Dec 2025</span></li>
+        <li><span>Software Development Intern (Full-time)</span><span>Mar 2025 - Aug 2025</span></li>
+      </ul>
+      <div class="entry-desc">
+        Built API test suites and backend testing workflows for IBM Knowledge Catalog,
+        validating enterprise-scale microservices alongside the dev and QA teams. (Java, Jenkins)
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="entry">
+      <div class="entry-head">
+        <span><span class="entry-title">Hochschule der Medien, Stuttgart</span> <span class="entry-org">&mdash; BSc Media Informatics</span></span>
+        <span class="entry-meta">2023 - Present</span>
+      </div>
+      <div class="entry-desc">Bachelor thesis on autonomous cluster remediation with LLM agents.</div>
+    </div>
+    <div class="entry">
+      <div class="entry-head">
+        <span><span class="entry-title">Freie Waldorfschule, Böblingen</span> <span class="entry-org">&mdash; Abitur</span></span>
+        <span class="entry-meta">2020 - 2022</span>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="entry-head">
+        <span><span class="entry-title">Burnaby Mountain Secondary School, Vancouver</span> <span class="entry-org">&mdash; Exchange year, Canada</span></span>
+        <span class="entry-meta">2019 - 2020</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Selected Projects</h2>
+    <div class="projects">
+      <div>
+        <span class="project-name">vigil</span> <span class="project-stack">Python, Go</span>
+        <div class="project-desc">
+          Multi-agent system that diagnoses and repairs Kubernetes faults on its own through
+          typed MCP tools, reversible by construction.
+        </div>
+      </div>
+      <div>
+        <span class="project-name">bedrock</span> <span class="project-stack">Nix</span>
+        <div class="project-desc">
+          Bare-metal Kubernetes homelab that lives entirely in Git; three NixOS nodes reconciled by Flux.
+        </div>
+      </div>
+      <div>
+        <span class="project-name">horizon</span> <span class="project-stack">Go</span>
+        <div class="project-desc">
+          Controller that watches K3s for resource pressure and bursts onto Hetzner Cloud over a
+          WireGuard overlay, then tears the node down after the spike.
+        </div>
+      </div>
+      <div>
+        <span class="project-name">sentio-systems</span> <span class="project-stack">Java, TypeScript, Python</span>
+        <div class="project-desc">
+          Wildlife and weather monitoring; Raspberry Pi field devices feed a Spring Boot backend
+          with AI classification and a React dashboard.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <div class="skills-row">
+      <span class="skills-label">Languages</span>
+      <span>Go, Python, Java, TypeScript</span>
+    </div>
+    <div class="skills-row">
+      <span class="skills-label">Runtimes &amp; frameworks</span>
+      <span>Spring, React, Nix</span>
+    </div>
+    <div class="skills-row">
+      <span class="skills-label">Infrastructure &amp; data</span>
+      <span>Linux, Kubernetes, Docker, Terraform, Postgres, Redis, Prometheus, Grafana, Raspberry Pi</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Volunteering</h2>
+    <div class="entry">
+      <div class="entry-head">
+        <span><span class="entry-title">Student Mentor</span> <span class="entry-org">&mdash; Hochschule der Medien, Stuttgart</span></span>
+        <span class="entry-meta">Mar 2024 - Aug 2024</span>
+      </div>
+      <div class="entry-desc">Supporting first-semester students in finding their footing on campus and in their studies.</div>
+    </div>
+    <div class="entry">
+      <div class="entry-head">
+        <span><span class="entry-title">Scout</span></span>
+        <span class="entry-meta">Since 2008</span>
+      </div>
+      <div class="entry-desc">Long-term member, organising outdoor excursions with larger groups.</div>
+    </div>
+    <div class="entry">
+      <div class="entry-head">
+        <span><span class="entry-title">Downhill Trainer</span></span>
+        <span class="entry-meta">Since 2014</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Languages</h2>
+    <div class="langs">German <span>(Native)</span> &nbsp;&middot;&nbsp; English <span>(C2)</span> &nbsp;&middot;&nbsp; Russian <span>(A1)</span></div>
+  </section>
+</body>
+</html>
