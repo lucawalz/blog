@@ -1,6 +1,6 @@
 baseURL = "https://lucawalz.dev/"
 languageCode = "en-us"
-title = "syslabs"
+title = "Luca Walz"
 theme = "PaperMod"
 enableRobotsTXT = true
 enableEmoji = true
@@ -22,7 +22,7 @@ ShowCodeCopyButtons = true
 ShowShareButtons = false
 
 [params.homeInfoParams]
-Title = "syslabs"
+Title = "Luca Walz"
 Content = "Notes on the things I build, project by project: past work, current experiments, and whatever comes next."
 
 [[menu.main]]
