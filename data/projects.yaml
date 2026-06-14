@@ -1,0 +1,53 @@
+- name: vigil
+  langs: Python, Go
+  url: https://github.com/lucawalz/vigil
+  summary: >-
+    My bachelor thesis: a multi-agent system that diagnoses and repairs faults in
+    a Kubernetes cluster on its own. The LLM agents act through typed MCP tools and
+    are reversible by construction, with Flux GitOps and NixOS generations giving
+    every repair a clean way back.
+  tags:
+    - LLM agents
+    - MCP
+    - Kubernetes
+    - Flux
+    - NixOS
+
+- name: bedrock
+  langs: Nix
+  url: https://github.com/lucawalz/bedrock
+  summary: >-
+    A bare-metal Kubernetes homelab that lives entirely in Git. Three NixOS nodes
+    run K3s, and Flux reconciles the cluster from the repository instead of by hand.
+  tags:
+    - NixOS
+    - K3s
+    - Flux
+    - GitOps
+
+- name: horizon
+  langs: Go
+  url: https://github.com/lucawalz/horizon
+  summary: >-
+    The active half of the homelab: a controller that watches K3s for resource
+    pressure and bursts onto Hetzner Cloud over a WireGuard overlay, then tears the
+    node down once the spike passes.
+  tags:
+    - Go
+    - Kubernetes
+    - WireGuard
+    - Hetzner Cloud
+
+- name: sentio-systems
+  langs: Java, TypeScript, Python
+  url: https://github.com/lucawalz/sentio-systems
+  summary: >-
+    A wildlife and weather monitoring platform. Raspberry Pi field devices feed
+    sensor and camera data to a Spring Boot backend, where AI classifies the animals
+    down to the bird species, with a React dashboard and an agentic chatbot to
+    explore it all.
+  tags:
+    - Spring Boot
+    - React
+    - Raspberry Pi
+    - Computer vision
