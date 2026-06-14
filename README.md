@@ -1,5 +1,13 @@
 # blog
 
+[![build](https://github.com/lucawalz/blog/actions/workflows/build.yaml/badge.svg)](https://github.com/lucawalz/blog/actions/workflows/build.yaml)
+[![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+![Hugo](https://img.shields.io/badge/Hugo-static-FF4088?logo=hugo&logoColor=white)
+
+A static blog and project notes, served from the home-lab cluster.
+
+## Description
+
 The source for blog.syslabs.dev, a Hugo static site using the PaperMod theme.
 GitHub Actions builds it into a container image and pushes it to GHCR. The
 home-lab cluster serves that image behind Traefik, and Cloudflare exposes it
@@ -42,3 +50,7 @@ convenience pointer.
 The cluster pulls without a registry secret, so the package must be public.
 After the first successful build, open the `blog` package under the GitHub
 account's Packages and set its visibility to public.
+
+## License
+
+Released under the MIT License. See [LICENSE](LICENSE).
