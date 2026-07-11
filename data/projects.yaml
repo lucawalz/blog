@@ -29,13 +29,13 @@
   langs: Go
   url: https://github.com/lucawalz/horizon
   summary: >-
-    The active half of the homelab: a controller that watches K3s for resource
-    pressure and bursts onto Hetzner Cloud over a WireGuard overlay, then tears the
-    node down once the spike passes.
+    The active half of the homelab: a Go CLI that rents reserved Hetzner Cloud
+    nodes on demand, folds them into the cluster over Tailscale, moves a workload
+    onto them, and tears them back down when they are no longer needed.
   tags:
     - Go
     - Kubernetes
-    - WireGuard
+    - Tailscale
     - Hetzner Cloud
 
 - name: sentio-systems
