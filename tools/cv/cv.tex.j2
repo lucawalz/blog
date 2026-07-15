@@ -1,0 +1,127 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[a4paper,top=13mm,bottom=11mm,left=18mm,right=18mm]{geometry}
+\usepackage[default,semibold,proportional]{inter}
+\usepackage[protrusion=true,expansion=false,final]{microtype}
+\usepackage{fontspec,xcolor,tabularx,enumitem,ragged2e}
+\usepackage[hidelinks]{hyperref}
+
+\newfontfamily\namefont{Inter}[Extension=.otf, UprightFont=*-SemiBold, LetterSpace=-1.5, Numbers=Lining]
+\newfontfamily\sectionfont{Inter}[Extension=.otf, UprightFont=*-SemiBold, LetterSpace=10.0, Numbers=Lining]
+\newfontfamily\titlefont{Inter}[Extension=.otf, UprightFont=*-SemiBold, Numbers=Lining]
+\newfontfamily\metafont{Inter}[Extension=.otf, UprightFont=*-Regular, Numbers={Monospaced,Lining}]
+
+\definecolor{accent}{HTML}{1D1E20}
+\definecolor{ink}{HTML}{3C3C3E}
+\definecolor{muted}{HTML}{72757A}
+\definecolor{rule}{HTML}{C8CDD4}
+
+\hypersetup{pdftitle={\VAR{personal.name | tex}}, pdfauthor={\VAR{personal.name | tex}}, pdfsubject={\VAR{personal.headline | tex}}}
+
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+\color{accent}
+\setlength{\RaggedRightRightskip}{0pt plus 3em}
+
+\newcommand{\sep}{\,\textperiodcentered\,}
+
+\newcommand{\entryhead}[2]{%
+  \begin{tabularx}{\linewidth}{@{}X r@{}}
+    \leavevmode#1 & {\metafont\color{muted}\fontsize{8.5}{11}\selectfont #2}
+  \end{tabularx}\par\vspace{1.5pt}}
+
+\newcommand{\cvsection}[1]{%
+  \vspace{9pt}%
+  {\sectionfont\fontsize{8.6}{11}\selectfont\color{accent}\MakeUppercase{#1}\par}%
+  \vspace{3pt}%
+  {\color{rule}\hrule height 0.5pt}%
+  \vspace{5pt}}
+
+\newcommand{\entrytitle}[1]{{\titlefont\fontsize{11}{14}\selectfont\color{accent} #1}}
+\newcommand{\entryorg}[1]{{\color{muted}\fontsize{9.5}{14}\selectfont #1}}
+\newcommand{\meta}[1]{{\leavevmode\metafont\color{muted}\fontsize{8.5}{11}\selectfont #1}}
+\newcommand{\detailtext}[1]{{\color{ink}\fontsize{9.5}{12.8}\selectfont #1\par}}
+
+\setlist[itemize]{leftmargin=1.1em, topsep=2pt, itemsep=1pt, parsep=0pt, label=\textperiodcentered}
+
+\begin{document}
+\RaggedRight
+
+{\namefont\fontsize{21}{25}\selectfont\color{accent} \VAR{personal.name | tex}\par}
+\vspace{2pt}
+{\titlefont\fontsize{10.5}{13}\selectfont\color{accent} \VAR{personal.headline | tex}\par}
+\vspace{6pt}
+{\color{accent}\hrule height 1pt}
+\vspace{6pt}
+{\color{muted}\fontsize{8.5}{11}\selectfont
+\BLOCK{for c in personal.contact}
+\BLOCK{if not loop.first}\sep{}\BLOCK{endif}
+\BLOCK{if c.label | default('')}\VAR{c.label | tex}\ \BLOCK{endif}\href{\VAR{c.url}}{\VAR{c.text | tex}}%
+\BLOCK{endfor}
+\par}
+
+\vspace{10pt}
+\detailtext{\VAR{personal.profile | tex}}
+
+\cvsection{Experience}
+\BLOCK{for job in experience}
+\entryhead{\entrytitle{\VAR{job.company | tex}}\entryorg{\sep \VAR{job.location | tex}}}{\VAR{job.duration | tex}}
+\BLOCK{for role in job.roles}
+\begin{tabularx}{\linewidth}{@{}X r@{}}
+  {\leavevmode\color{ink}\fontsize{9.5}{12.8}\selectfont \VAR{role.title | tex}\sep \VAR{role.type | tex}} & \meta{\VAR{role.period | tex}}
+\end{tabularx}\par
+\BLOCK{for bullet in role.bullets | default([])}
+\begin{itemize}
+  \item \detailtext{\VAR{bullet | tex}}
+\end{itemize}
+\BLOCK{endfor}
+\BLOCK{endfor}
+\vspace{4pt}
+\detailtext{\VAR{job.summary | tex}}
+\BLOCK{if job.tags | default([])}
+\vspace{2pt}
+\meta{\BLOCK{for t in job.tags}\BLOCK{if not loop.first}\sep{}\BLOCK{endif}\VAR{t | tex}\BLOCK{endfor}}\par
+\BLOCK{endif}
+\BLOCK{if not loop.last}\vspace{8pt}\BLOCK{endif}
+\BLOCK{endfor}
+
+\cvsection{Education}
+\BLOCK{for ed in education}
+\entryhead{\entrytitle{\VAR{ed.institution | tex}}\entryorg{\sep \VAR{ed.degree | tex}}}{\VAR{ed.period | tex}}
+\BLOCK{if ed.detail | default('')}
+\detailtext{\VAR{ed.detail | tex}}
+\BLOCK{endif}
+\BLOCK{if not loop.last}\vspace{8pt}\BLOCK{endif}
+\BLOCK{endfor}
+
+\cvsection{Selected Projects}
+\BLOCK{for p in projects}
+\entryhead{\entrytitle{\href{\VAR{p.url}}{\VAR{p.name | tex}}}\BLOCK{if p.role | default('')}\entryorg{\sep \VAR{p.role | tex}}\BLOCK{endif}}{\VAR{p.langs | tex}}
+\detailtext{\VAR{p.cv_summary | default(p.summary) | tex}}
+\BLOCK{if not loop.last}\vspace{8pt}\BLOCK{endif}
+\BLOCK{endfor}
+
+\cvsection{Skills}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{44mm} X@{}}
+\BLOCK{for s in skills}
+  \meta{\VAR{s.group | tex}} & {\leavevmode\color{ink}\fontsize{9.5}{12.8}\selectfont \VAR{s["items"] | tex}} \\[2pt]
+\BLOCK{endfor}
+\end{tabularx}
+
+\cvsection{Volunteering}
+\BLOCK{for v in volunteering}
+\entryhead{\entrytitle{\VAR{v.role | tex}}\BLOCK{if v.org | default('')}\entryorg{\sep \VAR{v.org | tex}}\BLOCK{endif}}{\VAR{v.period | tex}}
+\BLOCK{if v.detail | default('')}
+\detailtext{\VAR{v.detail | tex}}
+\BLOCK{endif}
+\BLOCK{if not loop.last}\vspace{8pt}\BLOCK{endif}
+\BLOCK{endfor}
+
+\cvsection{Languages}
+{\color{ink}\fontsize{9.5}{12.8}\selectfont
+\BLOCK{for l in languages}
+\BLOCK{if not loop.first}\sep{}\BLOCK{endif}
+\VAR{l.name | tex}~{\metafont\color{muted}\fontsize{8.5}{11}\selectfont (\VAR{l.level | tex})}%
+\BLOCK{endfor}
+\par}
+
+\end{document}

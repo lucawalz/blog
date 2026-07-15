@@ -1,3 +1,20 @@
+personal:
+  name: Luca Walz
+  headline: Backend and Cloud Engineer
+  profile: >-
+    Backend and cloud engineer who likes following a system the whole way down, from the API
+    surface to the infrastructure underneath. Most of my work sits around Kubernetes, NixOS and
+    GitOps, with a fair bit of Go, plus LLM agents and full-stack IoT on the side.
+  contact:
+    - label: GitHub
+      text: github.com/lucawalz
+      url: https://github.com/lucawalz
+    - label: LinkedIn
+      text: linkedin.com/in/luca-walz
+      url: https://www.linkedin.com/in/luca-walz
+    - text: lucawalz.dev
+      url: https://lucawalz.dev/
+
 experience:
   - company: IBM
     location: Böblingen, Hybrid
