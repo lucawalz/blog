@@ -60,14 +60,9 @@
     </section>
     {{- end }}
 
-    {{- with .Site.Data.cv.languages }}
     <section class="cv-section">
-      <h2>Languages</h2>
-      <ul class="cv-inline">
-        {{- range . }}<li>{{ .name }} <span class="cv-meta">{{ .level }}</span></li>{{ end }}
-      </ul>
+      <p class="cv-detail">The projects behind most of this live on the <a href="/projects/">projects page</a>, and the full record is in the <a href="{{ .Site.Params.cvFile }}">CV</a>.</p>
     </section>
-    {{- end }}
   </div>
 </article>
 {{- end }}
