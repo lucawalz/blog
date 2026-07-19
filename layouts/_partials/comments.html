@@ -3,8 +3,8 @@
 <div class="post-comments"></div>
 <script>
   (function () {
-    function paperModTheme() {
-      return document.documentElement.dataset.theme === "dark" ? "dark" : "light";
+    function giscusTheme() {
+      return document.documentElement.dataset.theme === "dark" ? "transparent_dark" : "light";
     }
     var g = document.createElement("script");
     g.src = "https://giscus.app/client.js";
@@ -22,7 +22,7 @@
       "data-input-position": "bottom",
       "data-lang": "en",
       "data-loading": "lazy",
-      "data-theme": paperModTheme()
+      "data-theme": giscusTheme()
     };
     Object.keys(attrs).forEach(function (k) { g.setAttribute(k, attrs[k]); });
     document.querySelector(".post-comments").appendChild(g);
@@ -30,7 +30,7 @@
       var frame = document.querySelector("iframe.giscus-frame");
       if (!frame) return;
       frame.contentWindow.postMessage(
-        { giscus: { setConfig: { theme: paperModTheme() } } },
+        { giscus: { setConfig: { theme: giscusTheme() } } },
         "https://giscus.app"
       );
     }).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
