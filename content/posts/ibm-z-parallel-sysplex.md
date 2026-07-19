@@ -3,6 +3,8 @@ title = "How IBM Z stays up: Parallel Sysplex, RAS, and the z16"
 date = "2026-06-14T12:00:00Z"
 draft = false
 tags = ["ibm-z", "mainframe", "availability"]
+description = "How IBM Z mainframes reach five-nines availability: Parallel Sysplex, the RAS philosophy, and z16 features like System Recovery Boost and Dynamic Core Sparing."
+summary = "A shorter English take on how IBM Z stays available almost indefinitely, from Parallel Sysplex and RAS to the z16, pointing back to the original German article."
 +++
 
 Back in February 2025 I wrote a piece for a course at HdM on how IBM Z mainframes

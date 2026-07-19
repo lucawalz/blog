@@ -1,6 +1,7 @@
 +++
 title = "About"
 layout = "about"
+hiddenInRss = true
 +++
 
 Most of my projects start as something I wished already existed. A homelab I can

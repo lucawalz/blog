@@ -3,6 +3,8 @@ title = "Hello, World"
 date = "2026-06-14T00:00:00Z"
 draft = false
 tags = ["meta"]
+description = "What this blog is about: practical write-ups of the things I build, the failure modes along the way, and the reasoning behind each choice."
+summary = "A place to write about the things I build, project by project, leaning practical: what shipped, what broke, and why."
 +++
 
 This is a place to write about the things I build, project by project. Some
