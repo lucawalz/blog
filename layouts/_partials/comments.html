@@ -1,0 +1,40 @@
+{{- with site.Params.giscus }}
+{{- if and .repo .repoId .category .categoryId }}
+<div class="post-comments"></div>
+<script>
+  (function () {
+    function paperModTheme() {
+      return document.documentElement.dataset.theme === "dark" ? "dark" : "light";
+    }
+    var g = document.createElement("script");
+    g.src = "https://giscus.app/client.js";
+    g.async = true;
+    g.crossOrigin = "anonymous";
+    var attrs = {
+      "data-repo": {{ .repo }},
+      "data-repo-id": {{ .repoId }},
+      "data-category": {{ .category }},
+      "data-category-id": {{ .categoryId }},
+      "data-mapping": "pathname",
+      "data-strict": "0",
+      "data-reactions-enabled": "1",
+      "data-emit-metadata": "0",
+      "data-input-position": "bottom",
+      "data-lang": "en",
+      "data-loading": "lazy",
+      "data-theme": paperModTheme()
+    };
+    Object.keys(attrs).forEach(function (k) { g.setAttribute(k, attrs[k]); });
+    document.querySelector(".post-comments").appendChild(g);
+    new MutationObserver(function () {
+      var frame = document.querySelector("iframe.giscus-frame");
+      if (!frame) return;
+      frame.contentWindow.postMessage(
+        { giscus: { setConfig: { theme: paperModTheme() } } },
+        "https://giscus.app"
+      );
+    }).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+  })();
+</script>
+{{- end }}
+{{- end }}

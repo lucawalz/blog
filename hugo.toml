@@ -21,6 +21,13 @@ ShowReadingTime = true
 ShowCodeCopyButtons = true
 ShowShareButtons = false
 cvFile = "/cv/luca-walz-cv.pdf"
+comments = true
+
+[params.giscus]
+repo = "lucawalz/blog"
+repoId = "R_kgDOS6YOsQ"
+category = "Announcements"
+categoryId = "DIC_kwDOS6YOsc4DBhoy"
 
 [params.homeInfoParams]
 Title = "Hi, I'm Luca"
