@@ -8,7 +8,7 @@
     {{ .Content }}
 
     <div class="project-grid">
-      {{- range hugo.Data.projects }}
+      {{- range .Site.Data.projects }}
       <a class="project-card" href="{{ .url }}" target="_blank" rel="noopener noreferrer">
         <div class="project-head">
           <span class="project-name">{{ .name }}</span>

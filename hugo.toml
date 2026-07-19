@@ -1,5 +1,5 @@
 baseURL = "https://lucawalz.dev/"
-locale = "en-us"
+languageCode = "en-us"
 title = "lucawalz.dev"
 theme = "PaperMod"
 enableRobotsTXT = true
