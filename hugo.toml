@@ -15,11 +15,20 @@ lineNos = false
 noClasses = false
 style = "monokai"
 
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
 [params]
 defaultTheme = "auto"
 ShowReadingTime = true
 ShowCodeCopyButtons = true
 ShowShareButtons = false
+ShowToc = true
+TocOpen = false
+ShowBreadCrumbs = true
+ShowPostNavLinks = true
+ShowRssButtonInSectionTermList = true
+ShowFullTextinRSS = true
 cvFile = "/cv/luca-walz-cv.pdf"
 comments = true
 
@@ -41,20 +50,42 @@ url = "https://github.com/lucawalz"
 name = "linkedin"
 url = "https://www.linkedin.com/in/luca-walz"
 
-[[menu.main]]
-identifier = "projects"
-name = "Projects"
-url = "/projects/"
-weight = 10
+[[params.socialIcons]]
+name = "rss"
+url = "index.xml"
 
 [[menu.main]]
 identifier = "about"
 name = "About"
 url = "/about/"
+weight = 10
+
+[[menu.main]]
+identifier = "projects"
+name = "Projects"
+url = "/projects/"
 weight = 15
+
+[[menu.main]]
+identifier = "now"
+name = "Now"
+url = "/now/"
+weight = 20
+
+[[menu.main]]
+identifier = "reading"
+name = "Reading"
+url = "/reading/"
+weight = 25
 
 [[menu.main]]
 identifier = "tags"
 name = "Tags"
 url = "/tags/"
-weight = 20
+weight = 30
+
+[[menu.main]]
+identifier = "search"
+name = "Search"
+url = "/search/"
+weight = 35
