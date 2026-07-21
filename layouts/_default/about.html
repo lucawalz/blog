@@ -17,11 +17,11 @@
       <div class="cv-entry">
         <div class="cv-entry-head">
           <span class="cv-title">{{ .company }}</span>
-          <span class="cv-meta">{{ .location }}{{ with .duration }} · {{ . }}{{ end }}</span>
+          <span class="cv-meta">{{ .location }}</span>
         </div>
         <ul class="role-list">
           {{- range .roles }}
-          <li><span>{{ .title }}</span><span class="cv-meta">{{ .type }} · {{ .period }}</span></li>
+          <li><span>{{ .title }}</span><span class="cv-meta">{{ .type }} · {{ delimit (findRE "[0-9]{4}" .period | uniq) "-" }}</span></li>
           {{- end }}
         </ul>
         {{- with .summary }}<p class="cv-detail">{{ . }}</p>{{ end }}
@@ -37,7 +37,8 @@
       <div class="cv-entry">
         <div class="cv-entry-head">
           <span class="cv-title">{{ .degree }}</span>
-          <span class="cv-meta">{{ .period }}</span>
+          {{- $years := findRE "[0-9]{4}" .period }}
+          <span class="cv-meta">{{ if in .period "Present" }}{{ index $years 0 }}-{{ else }}{{ index $years (sub (len $years) 1) }}{{ end }}</span>
         </div>
         <div class="cv-sub">{{ .institution }}</div>
         {{- with .detail }}<p class="cv-detail">{{ . }}</p>{{ end }}
