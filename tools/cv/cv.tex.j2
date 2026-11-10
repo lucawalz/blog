@@ -55,7 +55,7 @@
 {\color{muted}\fontsize{8.5}{11}\selectfont
 \BLOCK{for c in personal.contact}
 \BLOCK{if not loop.first}\sep{}\BLOCK{endif}
-\BLOCK{if c.label | default('')}\VAR{c.label | tex}\ \BLOCK{endif}\href{\VAR{c.url}}{\VAR{c.text | tex}}%
+\BLOCK{if c.label | default('')}\VAR{c.label | tex}\ \BLOCK{endif}\BLOCK{if c.url | default('')}\href{\VAR{c.url}}{\VAR{c.text | tex}}\BLOCK{else}\VAR{c.text | tex}\BLOCK{endif}%
 \BLOCK{endfor}
 \par}
 
@@ -64,7 +64,7 @@
 
 \cvsection{Experience}
 \BLOCK{for job in experience}
-\entryhead{\entrytitle{\VAR{job.company | tex}}\entryorg{\sep \VAR{job.location | tex}}}{\VAR{job.duration | tex}}
+\entryhead{\entrytitle{\VAR{job.company | tex}}\entryorg{\sep \VAR{job.location | tex}}}{\VAR{job.duration | default('') | tex}}
 \BLOCK{for role in job.roles}
 \begin{tabularx}{\linewidth}{@{}X r@{}}
   {\leavevmode\color{ink}\fontsize{9.5}{12.8}\selectfont \VAR{role.title | tex}\sep \VAR{role.type | tex}} & \meta{\VAR{role.period | tex}}
