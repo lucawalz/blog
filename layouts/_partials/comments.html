@@ -1,8 +1,14 @@
 {{- with site.Params.giscus }}
 {{- if and .repo .repoId .category .categoryId }}
-<div class="post-comments"></div>
+<div class="post-comments">
+  <div class="comments-consent">
+    <p>Comments are hosted on GitHub via giscus. Loading them sends the browser's IP address to GitHub.</p>
+    <button type="button" class="comments-load">Load comments</button>
+  </div>
+</div>
 <script>
-  (function () {
+  document.querySelector(".comments-load").addEventListener("click", function () {
+    document.querySelector(".comments-consent").remove();
     function giscusTheme() {
       return document.documentElement.dataset.theme === "dark" ? "transparent_dark" : "light";
     }
@@ -34,7 +40,7 @@
         "https://giscus.app"
       );
     }).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
-  })();
+  });
 </script>
 {{- end }}
 {{- end }}

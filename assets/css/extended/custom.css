@@ -200,3 +200,30 @@
         white-space: normal;
     }
 }
+
+.comments-consent {
+    padding: 16px 18px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--entry);
+    color: var(--secondary);
+    font-size: 15px;
+}
+
+.comments-consent p {
+    margin: 0 0 12px;
+}
+
+.comments-load {
+    padding: 7px 16px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--theme);
+    color: var(--primary);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.comments-load:hover {
+    border-color: var(--secondary);
+}
