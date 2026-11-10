@@ -49,3 +49,18 @@ jobs:
             ${{ env.IMAGE }}:main-${{ steps.sha.outputs.ts }}-${{ steps.sha.outputs.short }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
+  notify:
+    needs: build
+    if: failure() && github.event.pull_request.user.login == 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    env:
+      PR_URL: ${{ github.event.pull_request.html_url }}
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - run: |
+          gh pr edit "$PR_URL" --add-assignee lucawalz
+          gh pr comment "$PR_URL" --edit-last --create-if-none \
+            --body "Build failed on this update - auto-merge blocked, manual review required."
