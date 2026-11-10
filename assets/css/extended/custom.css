@@ -227,3 +227,10 @@
 .comments-load:hover {
     border-color: var(--secondary);
 }
+
+.footer-note {
+    padding-top: 0;
+    font-size: 11px;
+    line-height: 18px;
+    opacity: 0.8;
+}
