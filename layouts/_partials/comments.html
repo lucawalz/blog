@@ -1,14 +1,15 @@
 {{- with site.Params.giscus }}
 {{- if and .repo .repoId .category .categoryId }}
-<div class="post-comments">
+<div class="post-comments" tabindex="-1">
   <div class="comments-consent">
-    <p>Comments are hosted on GitHub via giscus. Loading them sends the browser's IP address to GitHub.</p>
+    <p>Comments are hosted on GitHub via giscus. Loading them sends the browser's IP address to giscus.app and GitHub.</p>
     <button type="button" class="comments-load">Load comments</button>
   </div>
 </div>
 <script>
   document.querySelector(".comments-load").addEventListener("click", function () {
     document.querySelector(".comments-consent").remove();
+    document.querySelector(".post-comments").focus();
     function giscusTheme() {
       return document.documentElement.dataset.theme === "dark" ? "transparent_dark" : "light";
     }
