@@ -29,13 +29,14 @@
   langs: Go
   url: https://github.com/lucawalz/horizon
   summary: >-
-    The active half of the homelab: a Go CLI that rents reserved Hetzner Cloud
-    nodes on demand, folds them into the cluster over Tailscale, moves a workload
-    onto them, and tears them back down when they are no longer needed.
+    The active half of the homelab: a Kubernetes operator that leases temporary
+    Hetzner Cloud capacity. A lease says how much, from where and for how long,
+    and the controller guarantees the machines are gone at the deadline even if
+    the cluster and the network are not there to help.
   tags:
     - Go
     - Kubernetes
-    - Tailscale
+    - Operator
     - Hetzner Cloud
 
 - name: sentio-systems
