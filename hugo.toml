@@ -34,7 +34,7 @@ cvFile = "/cv/luca-walz-cv.pdf"
 comments = true
 
 [params.footer]
-text = "Opinions are my own and not those of my employer."
+text = 'Personal website. Views and opinions expressed are my own and do not represent those of any current or former employer or affiliated organisation. [Disclaimer](/disclaimer/) | [contact@lucawalz.dev](mailto:contact@lucawalz.dev)'
 
 [params.giscus]
 repo = "lucawalz/blog"
