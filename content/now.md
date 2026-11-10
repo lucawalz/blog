@@ -6,17 +6,17 @@ ShowToc = false
 comments = false
 +++
 
-A snapshot of what I'm focused on at the moment. Updated July 2026.
+A snapshot of what I'm focused on at the moment. Updated November 2026.
 
-- Wrapping up my degree at HdM Stuttgart. I handed in my bachelor thesis on
-  getting LLM agents to diagnose and repair a Kubernetes cluster on their own
-  without making things worse, and I'm now preparing for the colloquium that
-  defends it.
-- Studying for my written exams, and finishing two software projects that are both
-  due at the end of July.
-- Tinkering with the homelab in between. The latest addition is a built-in,
-  motion-activated 2U monitoring screen that doubles as the mount for my Raspberry
-  Pi router, all 3D printed and mounted in a 10 inch rack.
+- Settling into a new job as a software developer, which I started in
+  September. Most of my days are backend work in Java.
+- Done with my degree at HdM Stuttgart. The bachelor thesis on getting LLM agents
+  to diagnose and repair a Kubernetes cluster without making things worse is
+  handed in and defended.
+- Rebuilding horizon, the part of the homelab that leases temporary Hetzner Cloud
+  capacity, as a Kubernetes operator.
+- Writing up the homelab itself: a post on the hardware and one on the network
+  between its two firewalls are in progress.
 - Reading a mix of systems books and fiction. The current list lives on the
   [reading page](/reading/).
 
