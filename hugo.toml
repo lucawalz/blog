@@ -34,7 +34,7 @@ cvFile = "/cv/luca-walz-cv.pdf"
 comments = true
 
 [params.footer]
-text = '[Disclaimer](/disclaimer/) &middot; [Contact](mailto:contact@lucawalz.dev)'
+text = '[Disclaimer](/disclaimer/) &middot; [Privacy](/privacy/) &middot; [Contact](mailto:contact@lucawalz.dev)'
 
 [params.giscus]
 repo = "lucawalz/blog"
