@@ -19,6 +19,7 @@ style = "monokai"
 home = ["HTML", "RSS", "JSON"]
 
 [params]
+images = ["og.png"]
 defaultTheme = "auto"
 ShowReadingTime = true
 ShowCodeCopyButtons = true

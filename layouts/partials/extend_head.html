@@ -1,2 +1,13 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <meta name="robots" content="noai, noimageai">
+{{- with resources.Get "og/base.png" }}
+{{- $person := hugo.Data.cv.personal }}
+{{- $semibold := resources.Get "og/Inter-SemiBold.otf" }}
+{{- $regular := resources.Get "og/Inter-Regular.otf" }}
+{{- $img := . | images.Filter
+  (images.Text $person.name (dict "font" $semibold "size" 88 "color" "#dadadb" "x" 96 "y" 200))
+  (images.Text $person.headline (dict "font" $regular "size" 34 "color" "#dadadb" "x" 96 "y" 318))
+  (images.Text site.Title (dict "font" $regular "size" 30 "color" "#9b9c9d" "x" 96 "y" 432))
+}}
+{{- ($img | resources.Copy "og.png").Publish }}
+{{- end }}
