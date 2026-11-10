@@ -1,13 +1,22 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <meta name="robots" content="noai, noimageai">
+{{- $ogMarginX := 96 }}
+{{- $ogNameSize := 88 }}
+{{- $ogNameY := 200 }}
+{{- $ogHeadlineSize := 34 }}
+{{- $ogHeadlineY := 318 }}
+{{- $ogSiteSize := 30 }}
+{{- $ogSiteY := 432 }}
+{{- $ogPrimary := "#dadadb" }}
+{{- $ogSecondary := "#9b9c9d" }}
 {{- with resources.Get "og/base.png" }}
 {{- $person := hugo.Data.cv.personal }}
 {{- $semibold := resources.Get "og/Inter-SemiBold.otf" }}
 {{- $regular := resources.Get "og/Inter-Regular.otf" }}
 {{- $img := . | images.Filter
-  (images.Text $person.name (dict "font" $semibold "size" 88 "color" "#dadadb" "x" 96 "y" 200))
-  (images.Text $person.headline (dict "font" $regular "size" 34 "color" "#dadadb" "x" 96 "y" 318))
-  (images.Text site.Title (dict "font" $regular "size" 30 "color" "#9b9c9d" "x" 96 "y" 432))
+  (images.Text $person.name (dict "font" $semibold "size" $ogNameSize "color" $ogPrimary "x" $ogMarginX "y" $ogNameY))
+  (images.Text $person.headline (dict "font" $regular "size" $ogHeadlineSize "color" $ogPrimary "x" $ogMarginX "y" $ogHeadlineY))
+  (images.Text site.Title (dict "font" $regular "size" $ogSiteSize "color" $ogSecondary "x" $ogMarginX "y" $ogSiteY))
 }}
 {{- ($img | resources.Copy "og.png").Publish }}
 {{- end }}
