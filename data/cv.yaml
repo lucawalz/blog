@@ -17,11 +17,15 @@ personal:
 
 experience:
   - company: IBM
-    location: Böblingen, Hybrid
+    location: Ehningen, Hybrid
     roles:
       - title: Software Developer
         type: Full-time
         period: Since Sep 2026
+
+  - company: IBM
+    location: Böblingen, Hybrid
+    roles:
       - title: Working Student
         type: Part-time
         period: Sep 2025 - Dec 2025
@@ -29,8 +33,8 @@ experience:
         type: Full-time
         period: Mar 2025 - Aug 2025
     summary: >-
-      As intern and working student: built API test suites and backend testing workflows for IBM Knowledge
-      Catalog, validating enterprise-scale microservices alongside the dev and QA teams.
+      Built API test suites and backend testing workflows for IBM Knowledge Catalog, validating
+      enterprise-scale microservices alongside the dev and QA teams.
     tags:
       - Java
       - Jenkins
