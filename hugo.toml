@@ -40,7 +40,7 @@ categoryId = "DIC_kwDOS6YOsc4DBhoy"
 
 [params.homeInfoParams]
 Title = "Hi, I'm Luca"
-Content = "I'm a backend and cloud engineer. I like working across the whole stack, from the APIs down to the servers and networks they run on, and lately that has mostly meant Kubernetes, NixOS, and a lot of Go. I'm studying at HdM Stuttgart, and I spent the last year at IBM working on backend services and the testing around them. A lot of what I build outside of that lives in a homelab I run entirely from Git, and I write up the parts worth sharing here."
+Content = "I'm a Software Developer at IBM, working in unstructured data curation for watsonx.data intelligence. Most of that work is backend services in Java. Outside of work: Go, Kubernetes, NixOS and a homelab run entirely from Git. I write up the parts worth sharing here."
 
 [[params.socialIcons]]
 name = "github"
