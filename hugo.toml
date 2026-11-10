@@ -33,6 +33,9 @@ ShowFullTextinRSS = true
 cvFile = "/cv/luca-walz-cv.pdf"
 comments = true
 
+[params.footer]
+text = "Opinions are my own and not those of my employer."
+
 [params.giscus]
 repo = "lucawalz/blog"
 repoId = "R_kgDOS6YOsQ"
