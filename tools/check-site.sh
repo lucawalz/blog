@@ -75,3 +75,5 @@ assert_absent public/posts/fixture-standalone/index.html '<span>Note</span>'
 assert_exists public/homelab/index.html
 assert_contains public/homelab/index.html 'href=/series/bedrock/'
 assert_contains public/index.html '/homelab/ title=Homelab'
+assert_contains public/posts/fixture-standalone/index.html 'class=footnotes'
+assert_contains "$(ls public/assets/css/stylesheet.*.css)" '.footnotes'
