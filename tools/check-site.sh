@@ -49,10 +49,10 @@ assert_exists() {
 assert_contains public/index.html 'content="Luca Walz writes about backend systems, Kubernetes, NixOS and the homelab they run on."'
 assert_contains public/posts/fixture-standalone/index.html 'class=paginav'
 assert_exists public/series/bedrock/index.html
-assert_contains public/posts/fixture-bedrock-2/index.html 'Part 2 of the bedrock series'
+assert_contains public/posts/fixture-bedrock-2/index.html 'Part 2 of the <a href=/series/bedrock/>bedrock</a> series'
 assert_contains public/posts/fixture-bedrock-2/index.html '/posts/fixture-bedrock-1/'
-assert_contains public/posts/fixture-bedrock-1/index.html 'Part 1 of the bedrock series'
-assert_contains public/posts/fixture-horizon-1/index.html 'Part 1 of the horizon series'
+assert_contains public/posts/fixture-bedrock-1/index.html 'Part 1 of the <a href=/series/bedrock/>bedrock</a> series'
+assert_contains public/posts/fixture-horizon-1/index.html 'Part 1 of the <a href=/series/horizon/>horizon</a> series'
 assert_absent public/posts/fixture-horizon-1/index.html 'series-box-list'
 assert_absent_anywhere 'fixture-bedrock-draft'
 assert_absent public/posts/fixture-standalone/index.html 'series-box'

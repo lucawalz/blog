@@ -9,7 +9,7 @@
 {{- if eq $part $current }}{{ $position = add $index 1 }}{{ else }}{{ $others = $others | append $part }}{{ end }}
 {{- end }}
 <nav class="series-box">
-  <p class="series-box-title">Part {{ $position }} of the {{ $term.Title }} series (<a href="{{ $term.RelPermalink }}">all parts</a>)</p>
+  <p class="series-box-title">Part {{ $position }} of the <a href="{{ $term.RelPermalink }}">{{ $term.Title }}</a> series</p>
   {{- with $others }}
   <ul class="series-box-list">
     {{- range . }}
