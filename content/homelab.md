@@ -15,12 +15,23 @@ This is a first draft, built from the public notes in the [bedrock repository](h
 
 ## Hardware
 
-- Three Lenovo ThinkCentre m920q mini PCs: the cluster nodes. One runs the K3s control plane (and workloads too), the other two are workers.
-- A Raspberry Pi: the router, gateway, firewall, DHCP and DNS for the lab. It also acts as the Tailscale subnet router.
-- TP-Link TL-SG108PE managed switch: carries the VLAN tags and powers the Pi over PoE.
-- Rack: [Lab Rax, a 3D-printable 10-inch rack by Michael Klements (The DIY Life)](https://the-diy-life.com/introducing-lab-rax-a-3d-printable-modular-10-rack-system/).
+- Three [Lenovo ThinkCentre M920q](https://psref.lenovo.com/Product/ThinkCentre/ThinkCentre_M920q) mini PCs: the cluster nodes. One runs the K3s control plane (and workloads too), the other two are workers.
+- A [Raspberry Pi 4 Model B](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/) with a PoE+ HAT: the router, gateway, firewall, DHCP and DNS for the lab. It also acts as the Tailscale subnet router.
+- A 7.84 inch 1280x400 HDMI display on the Pi, showing a small Grafana dashboard. It is the frameless display recommended by the screen module below ([AliExpress listing](https://www.aliexpress.us/item/3256804800636801.html)).
+- [TP-Link TL-SG108PE](https://www.tp-link.com/en/business-networking/easy-smart-switch/tl-sg108pe/) managed switch: carries the VLAN tags and powers the Pi over PoE.
 
-Licences of third-party designs still to be checked.
+All product links are plain manufacturer or shop links, not affiliate links.
+
+### Printed parts
+
+The rack is printed from designs by other makers. Each is used under the licence shown on its page.
+
+- "[Lab Rax 10" Server Rack - 5U](https://makerworld.com/en/models/1294480-lab-rax-10-server-rack-5u)" by Michael Klements ([The DIY Life](https://the-diy-life.com/introducing-lab-rax-a-3d-printable-modular-10-rack-system/)), MakerWorld Exclusive License.
+- "[Lab Rax Skadis Side Panels](https://makerworld.com/en/models/1490030-lab-rax-skadis-side-panels)" by clemon8, [CC BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/), a remix of Lab Rax by Michael Klements.
+- "[Lab Rax Sturdy Long Post Joiner](https://makerworld.com/en/models/1839684-lab-rax-sturdy-long-post-joiner)" by Kiwiworks, [CC BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/), a remix of "Lab Rax Extension Side Panels & Post Joiner" by Michael Klements.
+- "[Lenovo ThinkCentre Tiny M920Q 10-inch rack mount](https://makerworld.com/en/models/1808598-lenovo-thinkcentre-tiny-m920q-10-inch-rack-mount)" by Mixmeister, [CC BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+- "[10-inch rack panel for TL-SG108E](https://makerworld.com/en/models/1384014-10-inch-rack-panel-for-tl-sg108e)" by Dvidoo, [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/), a remix of "Mini Server Rack for TP-Link TL-SG108 Remix" by Sean Ryle. Designed for the TL-SG108E; it also fits the TL-SG108PE.
+- "[Screen module for 10 inch rack + Raspberry Pi [2U]](https://makerworld.com/en/models/2233953-screen-module-for-10-inch-rack-raspberry-pi-2u)" by Ilan Kushnir, MakerWorld Standard Digital File License.
 
 ## Network
 
