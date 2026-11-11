@@ -15,10 +15,17 @@ lineNos = false
 noClasses = false
 style = "monokai"
 
+[taxonomies]
+tag = "tags"
+category = "categories"
+series = "series"
+
 [outputs]
 home = ["HTML", "RSS", "JSON"]
 
 [params]
+description = "Luca Walz writes about backend systems, Kubernetes, NixOS and the homelab they run on."
+mainSections = ["posts"]
 images = ["og.png"]
 defaultTheme = "auto"
 ShowReadingTime = true
@@ -27,7 +34,7 @@ ShowShareButtons = false
 ShowToc = true
 TocOpen = false
 ShowBreadCrumbs = true
-ShowPostNavLinks = false
+ShowPostNavLinks = true
 ShowRssButtonInSectionTermList = true
 ShowFullTextinRSS = true
 cvFile = "/cv/luca-walz-cv.pdf"
