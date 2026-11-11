@@ -8,6 +8,10 @@ trap 'rm -rf "$TMP"' EXIT
 rsync -a --exclude .git --exclude public --exclude resources --exclude .worktrees --exclude .superpowers "$ROOT"/ "$TMP"/
 cp -R "$ROOT"/tools/fixtures/content/. "$TMP"/content/
 cd "$TMP"
+if [ -f content/homelab.md ]; then
+	sed "s/^draft = true/draft = false/" content/homelab.md >content/homelab.md.tmp
+	mv content/homelab.md.tmp content/homelab.md
+fi
 hugo --gc --minify -d "$TMP/public" >/dev/null
 
 assert_contains() {
@@ -68,3 +72,6 @@ assert_absent public/notes/fixture-note/index.html 'series-box'
 assert_contains public/notes/index.html 'fixture-note'
 assert_contains public/index.html '/notes/ title=Notes'
 assert_absent public/posts/fixture-standalone/index.html '<span>Note</span>'
+assert_exists public/homelab/index.html
+assert_contains public/homelab/index.html 'href=/series/bedrock/'
+assert_contains public/index.html '/homelab/ title=Homelab'
