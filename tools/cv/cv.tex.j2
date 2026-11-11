@@ -1,12 +1,14 @@
 \documentclass[10pt,a4paper]{article}
 \usepackage[a4paper,top=13mm,bottom=11mm,left=18mm,right=18mm]{geometry}
+\usepackage{fontspec}
+\defaultfontfeatures[Inter]{RawFeature=-calt}
 \usepackage[default,semibold,proportional]{inter}
 \usepackage[protrusion=true,expansion=false,final]{microtype}
-\usepackage{fontspec,xcolor,tabularx,enumitem,ragged2e}
+\usepackage{xcolor,tabularx,enumitem,ragged2e}
 \usepackage[hidelinks]{hyperref}
 
 \newfontfamily\namefont{Inter}[Extension=.otf, UprightFont=*-SemiBold, LetterSpace=-1.5, Numbers=Lining]
-\newfontfamily\sectionfont{Inter}[Extension=.otf, UprightFont=*-SemiBold, LetterSpace=10.0, Numbers=Lining]
+\newfontfamily\sectionfont{Inter}[Extension=.otf, UprightFont=*-SemiBold, Numbers=Lining]
 \newfontfamily\titlefont{Inter}[Extension=.otf, UprightFont=*-SemiBold, Numbers=Lining]
 \newfontfamily\metafont{Inter}[Extension=.otf, UprightFont=*-Regular, Numbers={Monospaced,Lining}]
 
