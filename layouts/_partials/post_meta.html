@@ -1,0 +1,35 @@
+{{- $meta := slice }}
+{{- $dayLayout := "2006-01-02" }}
+{{- $dateFormat := default ":date_long" site.Params.DateFormat }}
+
+{{- if eq .Section "notes" -}}
+    {{- $meta = $meta | append "<span>Note</span>" }}
+{{- end }}
+
+{{- if not .Date.IsZero -}}
+    {{- $meta = $meta | append (printf "<span title='%s'>%s</span>" (.Date | time.Format "2006-01-02T15:04:05-07:00") (.Date | time.Format $dateFormat)) }}
+{{- end }}
+
+{{- if and .Params.lastmod (ne (.Lastmod.Format $dayLayout) (.Date.Format $dayLayout)) -}}
+    {{- $meta = $meta | append (printf "<span title='%s'>Updated %s</span>" (.Lastmod | time.Format "2006-01-02T15:04:05-07:00") (.Lastmod | time.Format $dateFormat)) }}
+{{- end }}
+
+{{- if (.Param "ShowReadingTime") -}}
+    {{- $meta = $meta | append (printf "<span>%s</span>" (i18n "read_time" .ReadingTime | default (printf "%d min" .ReadingTime))) }}
+{{- end }}
+
+{{- if (.Param "ShowWordCount") -}}
+    {{- $meta = $meta | append (printf "<span>%s</span>" (i18n "words" .WordCount | default (printf "%d words" .WordCount))) }}
+{{- end }}
+
+{{- if not (.Param "hideAuthor") -}}
+    {{- with (partial "author.html" .) }}
+        {{- $meta = $meta | append (printf "<span>%s</span>" .) }}
+    {{- end }}
+{{- end }}
+
+{{/* Combine all meta information into a single string with separators and render it as HTML.*/}}
+
+{{- with $meta }}
+    {{- delimit . "&nbsp;·&nbsp;" | safeHTML -}}
+{{- end -}}
