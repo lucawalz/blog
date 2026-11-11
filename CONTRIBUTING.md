@@ -29,6 +29,7 @@ Roughly 70 % of pods restarted within a minute.[^1]
 - Third-party designs (3D prints and similar) carry the title, author, link to the source and the licence, named and linked (Creative Commons TASL).
 - A note is added when the design was modified.
 - Each design's licence is checked individually; MakerWorld's default is its own licence, not Creative Commons.
+- Product links are plain manufacturer or shop links. The blog uses no affiliate links.
 
 ## Images
 
