@@ -16,9 +16,11 @@ This is a first draft, built from the public notes in the [bedrock repository](h
 ## Hardware
 
 - Three [Lenovo ThinkCentre M920q](https://psref.lenovo.com/Product/ThinkCentre/ThinkCentre_M920q) mini PCs: the cluster nodes. One runs the K3s control plane (and workloads too), the other two are workers.
-- A [Raspberry Pi 4 Model B](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/) with a PoE+ HAT: the router, gateway, firewall, DHCP and DNS for the lab. It also acts as the Tailscale subnet router.
-- A 7.84 inch 1280x400 HDMI display on the Pi, showing a small Grafana dashboard. It is the frameless display recommended by the screen module below ([AliExpress listing](https://www.aliexpress.us/item/3256804800636801.html)).
+- A [Raspberry Pi 4 Model B](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/): the router, gateway, firewall, DHCP and DNS for the lab. It also acts as the Tailscale subnet router.
+- A [PoE+ HAT for the Pi 4](https://www.amazon.de/dp/B0928ZD7QQ) (802.3af/at, with a fan), so the Pi runs off the switch over its network cable.
+- A 7.84 inch 1280x400 HDMI display on the Pi, showing a small Grafana dashboard. It is the frameless display recommended by the screen module below ([AliExpress listing](https://www.aliexpress.us/item/3256804800636801.html)), connected with a short [mini HDMI to micro HDMI flat cable](https://www.amazon.de/dp/B08CV73KLH).
 - [TP-Link TL-SG108PE](https://www.tp-link.com/en/business-networking/easy-smart-switch/tl-sg108pe/) managed switch: carries the VLAN tags and powers the Pi over PoE.
+- [deleyCON CAT6a keystone couplers](https://www.amazon.de/dp/B07NJ6ZBTQ) in the rack.
 
 All product links are plain manufacturer or shop links, not affiliate links.
 
