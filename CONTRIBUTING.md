@@ -48,3 +48,9 @@ Roughly 70 % of pods restarted within a minute.[^1]
 ## Reporting mistakes
 
 - Email contact@lucawalz.dev or open an issue in this repository.
+
+## Maintenance
+
+- Before the first note is published, set `draft: false` in `content/notes/_index.md` so the notes page and its menu entry appear.
+- After a major PaperMod update, compare `layouts/rss.xml` and `layouts/_partials/post_meta.html` with their originals in `themes/PaperMod` and carry over upstream changes.
+- `sh tools/check-site.sh` checks the site structure.
