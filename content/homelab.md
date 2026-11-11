@@ -4,6 +4,9 @@ draft = true
 hiddenInRss = true
 ShowToc = true
 comments = false
+
+[menus.main]
+weight = 16
 +++
 
 Updated November 2026.
