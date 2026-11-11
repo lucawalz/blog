@@ -78,6 +78,12 @@ url = "/projects/"
 weight = 15
 
 [[menu.main]]
+identifier = "notes"
+name = "Notes"
+url = "/notes/"
+weight = 17
+
+[[menu.main]]
 identifier = "now"
 name = "Now"
 url = "/now/"
