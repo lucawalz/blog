@@ -50,6 +50,10 @@ Roughly 70 % of pods restarted within a minute.[^1]
 
 - Email contact@lucawalz.dev or open an issue in this repository.
 
+## Comments and discussions
+
+- Comments and discussions follow the [code of conduct](CODE_OF_CONDUCT.md).
+
 ## Maintenance
 
 - Before the first note is published, set `draft: false` in `content/notes/_index.md` so the notes page and its menu entry appear.
