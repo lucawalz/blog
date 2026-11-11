@@ -3,7 +3,7 @@ set -eu
 
 ROOT=$(cd "$(dirname "$0")/.." && pwd)
 TMP=$(mktemp -d)
-trap 'rm -rf "$TMP"' EXIT
+trap 'rm -rf "$TMP"' EXIT INT TERM
 
 rsync -a --exclude .git --exclude public --exclude resources --exclude .worktrees --exclude .superpowers "$ROOT"/ "$TMP"/
 cp -R "$ROOT"/tools/fixtures/content/. "$TMP"/content/
