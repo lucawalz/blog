@@ -1,0 +1,22 @@
+{{- if eq .Section "posts" }}
+{{- $current := . }}
+{{- range .GetTerms "series" }}
+{{- $term := . }}
+{{- $parts := where $term.Pages.ByDate "Section" "posts" }}
+{{- $others := slice }}
+{{- $position := 0 }}
+{{- range $index, $part := $parts }}
+{{- if eq $part $current }}{{ $position = add $index 1 }}{{ else }}{{ $others = $others | append $part }}{{ end }}
+{{- end }}
+<nav class="series-box">
+  <p class="series-box-title">Part {{ $position }} of the {{ $term.Title }} series (<a href="{{ $term.RelPermalink }}">all parts</a>)</p>
+  {{- with $others }}
+  <ul class="series-box-list">
+    {{- range . }}
+    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{- end }}
+  </ul>
+  {{- end }}
+</nav>
+{{- end }}
+{{- end }}
