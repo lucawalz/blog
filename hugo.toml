@@ -41,7 +41,7 @@ cvFile = "/cv/luca-walz-cv.pdf"
 comments = true
 
 [params.footer]
-text = '[Disclaimer](/disclaimer/) &middot; [Privacy](/privacy/) &middot; [Contact](mailto:contact@lucawalz.dev)'
+text = '[Privacy](/privacy/) &middot; [Disclaimer](/disclaimer/) &middot; [Contact](mailto:contact@lucawalz.dev)'
 
 [params.giscus]
 repo = "lucawalz/blog"
@@ -69,34 +69,34 @@ url = "index.xml"
 identifier = "about"
 name = "About"
 url = "/about/"
-weight = 10
+weight = 60
 
 [[menu.main]]
 identifier = "projects"
 name = "Projects"
 url = "/projects/"
-weight = 15
+weight = 10
 
 [[menu.main]]
 identifier = "now"
 name = "Now"
 url = "/now/"
-weight = 20
+weight = 50
 
 [[menu.main]]
 identifier = "reading"
 name = "Reading"
 url = "/reading/"
-weight = 25
+weight = 40
 
 [[menu.main]]
 identifier = "tags"
 name = "Tags"
 url = "/tags/"
-weight = 30
+weight = 70
 
 [[menu.main]]
 identifier = "search"
 name = "Search"
 url = "/search/"
-weight = 35
+weight = 80
