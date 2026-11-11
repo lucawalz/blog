@@ -12,6 +12,10 @@ if [ -f content/homelab.md ]; then
 	sed "s/^draft = true/draft = false/" content/homelab.md >content/homelab.md.tmp
 	mv content/homelab.md.tmp content/homelab.md
 fi
+if [ -f content/notes/_index.md ]; then
+	sed "s/^draft: true/draft: false/" content/notes/_index.md >content/notes/_index.md.tmp
+	mv content/notes/_index.md.tmp content/notes/_index.md
+fi
 hugo --gc --minify -d "$TMP/public" >/dev/null
 
 assert_contains() {
