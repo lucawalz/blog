@@ -1,4 +1,4 @@
-FROM ghcr.io/gohugoio/hugo:v0.169.0 AS build
+FROM ghcr.io/gohugoio/hugo:v0.170.0 AS build
 WORKDIR /src
 COPY --chown=hugo:hugo . .
 RUN hugo --minify
