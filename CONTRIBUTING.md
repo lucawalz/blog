@@ -52,7 +52,7 @@ Roughly 70 % of pods restarted within a minute.[^1]
 
 ## Comments and discussions
 
-- Comments and discussions follow the [code of conduct](CODE_OF_CONDUCT.md).
+- Comments and discussions follow the [code of conduct](https://github.com/lucawalz/.github/blob/main/CODE_OF_CONDUCT.md).
 
 ## Maintenance
 

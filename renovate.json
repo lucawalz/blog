@@ -1,0 +1,22 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["github>lucawalz/.github//renovate/default"],
+  "git-submodules": {
+    "enabled": true
+  },
+  "packageRules": [
+    {
+      "description": "Hold Hugo for review, since a merge deploys and a Hugo minor can break the theme",
+      "matchPackageNames": ["ghcr.io/gohugoio/hugo"],
+      "automerge": false,
+      "labels": ["dependencies", "held"]
+    },
+    {
+      "description": "Hold the PaperMod theme for review, since the site overrides some of its layouts",
+      "matchManagers": ["git-submodules"],
+      "minimumReleaseAgeBehaviour": "timestamp-optional",
+      "automerge": false,
+      "labels": ["dependencies", "held"]
+    }
+  ]
+}

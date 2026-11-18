@@ -22,6 +22,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
+          persist-credentials: false
           submodules: recursive
 
       - name: Image tags
@@ -53,17 +54,33 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-  notify:
-    needs: build
-    if: failure() && github.event.pull_request.user.login == 'dependabot[bot]'
-    runs-on: ubuntu-latest
+  zizmor:
+    uses: lucawalz/.github/.github/workflows/zizmor.yml@512d402b682a017ae2629ee41f794686a8d1468c # v0.1.0
     permissions:
-      pull-requests: write
-    env:
-      PR_URL: ${{ github.event.pull_request.html_url }}
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      contents: read
+
+  pr-title:
+    if: github.event_name == 'pull_request'
+    uses: lucawalz/.github/.github/workflows/pr-title.yml@512d402b682a017ae2629ee41f794686a8d1468c # v0.1.0
+    permissions:
+      contents: read
+      pull-requests: read
+
+  codeql:
+    uses: lucawalz/.github/.github/workflows/codeql.yml@512d402b682a017ae2629ee41f794686a8d1468c # v0.1.0
+    permissions:
+      contents: read
+      security-events: write
+    with:
+      languages: python,actions
+
+  ci-gate:
+    if: always()
+    needs: [build, zizmor, pr-title, codeql]
+    runs-on: ubuntu-latest
+    permissions: {}
     steps:
-      - run: |
-          gh pr edit "$PR_URL" --add-assignee lucawalz
-          gh pr comment "$PR_URL" --edit-last --create-if-none \
-            --body "Dependabot update failed CI - manual review required."
+      - uses: re-actors/alls-green@b5b5b37504aa4183270bd3d855c52a67f212be35 # v1.3.0
+        with:
+          jobs: ${{ toJSON(needs) }}
+          allowed-skips: pr-title
