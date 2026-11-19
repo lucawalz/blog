@@ -3,9 +3,12 @@ set -eu
 
 ROOT=$(cd "$(dirname "$0")/.." && pwd)
 TMP=$(mktemp -d)
-trap 'rm -rf "$TMP"' EXIT INT TERM
+STAGE=$(mktemp -d)
+trap 'rm -rf "$TMP" "$STAGE"' EXIT INT TERM
 
-rsync -a --exclude .git --exclude public --exclude resources --exclude .worktrees --exclude .superpowers "$ROOT"/ "$TMP"/
+git -C "$ROOT" ls-files -z --cached --others --exclude-standard >"$STAGE/files"
+tar -C "$ROOT" --exclude .git --null -T "$STAGE/files" -cf "$STAGE/tree.tar"
+tar -C "$TMP" -xf "$STAGE/tree.tar"
 cp -R "$ROOT"/tools/fixtures/content/. "$TMP"/content/
 cd "$TMP"
 if [ -f content/homelab.md ]; then
